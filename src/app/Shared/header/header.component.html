@@ -1,17 +1,52 @@
-<ul class="nav">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-    </button>
-   <!-- Image and text -->
-    <a class="navbar-brand" href="#" style="color: green;">
-      <!-- <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> -->
-      Bootstrap
-    </a>
+<div class="sticky-top">
+    <ul class="nav bg-white">
+        <li *ngIf="BackArrow">
+            <a routerLink="/home">
+                <i class="fa fa-chevron-left ml-3" style="font-size: 20px; color:black; margin-top: 10px;" aria-hidden="true"></i>
+            </a>
+        </li>
+        <button *ngIf="Toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+        </button>
+        <!-- Image and text -->
+        <a class="navbar-brand" href="#" style="color: green;" *ngIf="!brandName">
+            <!-- <img src="assets/images/logo.jpg" width="100px" height="60px" class="d-inline-block align-top" alt="" loading="lazy"> -->
+            DMart
+        </a>
+        <a class="navbar-brand" href="#" style="color: green;" *ngIf="brandName">
+            &nbsp;&nbsp;&nbsp;All Products
+        </a>
 
-    <li class="nav-item justify-content-end" style="position: absolute; right: 0; margin-right: 35px; font-size: 20px;">
-        <a class="nav-link" style="color: green;" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-    </li>
-    <li class="nav-item  justify-content-end" style="position: absolute; right: 0; font-size: 20px; margin-right: 10px;">
-        <a class="nav-link" style="color: green;" href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
-    </li>
-</ul>
+
+        <li class="nav-item justify-content-end" *ngIf="searchButton"
+            style="position: absolute; right: 0; margin-right: 65px; font-size: 20px;">
+            <a class="nav-link" style="color: green;" href="#"><i class="fa fa-search"
+                    aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item justify-content-end"
+            style="position: absolute; right: 0; margin-right: 35px; font-size: 20px;">
+            <a class="nav-link" style="color: green;" href="#"><i class="fa fa-shopping-cart"
+                    aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item  justify-content-end"
+            style="position: absolute; right: 0; font-size: 20px; margin-right: 10px;">
+            <a class="nav-link" style="color: green;" href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+
+    <div class="row bg-white border-top mx-auto" *ngIf="ExtraHeader">
+        <div class="col-2 pt-1 px-4 border-right text-center">
+            <i class="fa fa-search" style="color: green; font-size: 20px;" aria-hidden="true"></i>
+        </div>
+        <div class="col-5 pt-1">
+            <input type="text" style="width: 100%; border: none; font-size: 13px;" placeholder="Aapko Kya Chahiye?">
+        </div>
+        <div class="col-1 pt-2">
+            <i class="fa fa-microphone" style="font-size: 20px;" aria-hidden="true"></i>
+        </div>
+        <div class="col-4 text-right">
+            <button style="font-size: 12px;" class="btn btn-success">SEARCH ></button>
+        </div>
+    </div>
+</div>

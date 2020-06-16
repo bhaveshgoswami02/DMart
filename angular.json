@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DMart"
+    }
+  },
+  "defaultProject": "DMart",
+  "cli": {
+    "analytics": "17a39149-a9c1-4166-aa0c-7f5c14600d53"
+  }
 }

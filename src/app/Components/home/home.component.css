@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.items {
+    display: flex;
+    /* overflow-x: auto; */
+    margin-bottom: 3px;
+    overflow-x: scroll;
+}
+
+.items::-webkit-scrollbar{
+    display: none;
+}
+
+.items .item {
+    min-width: 100%;
+    background: gray;
+    height: 200px;
+}
+
+
+.monthly-staples{
+    min-width: 100%;
+    background: gray;
+    height: 400px;
+}
+
+button{
+    padding: 10px 20px;
+}
